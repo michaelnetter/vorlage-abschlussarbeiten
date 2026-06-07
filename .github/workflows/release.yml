@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  workflow_dispatch:   # manuell über GitHub UI auslösen
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # nötig um Releases und Tags zu erstellen
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Versionsnummer (Datum)
+        id: date
+        run: echo "version=$(date +%Y%m%d)" >> $GITHUB_OUTPUT
+
+      - name: ZIP erstellen
+        run: zip -r Vorlage_HSX.zip Vorlage_HSX/
+
+      - name: GitHub Release erstellen und ZIP anhängen
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.date.outputs.version }}
+          name: ${{ steps.date.outputs.version }}
+          body: "Automatisch generiertes Release vom ${{ steps.date.outputs.version }}"
+          files: Vorlage_HSX.zip
