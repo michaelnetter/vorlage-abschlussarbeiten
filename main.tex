@@ -121,7 +121,7 @@
 \definecolor{lst_rule}   {RGB}{200, 200, 200}   % Rahmenfarbe
 
 % --- Basisstil (sprachunabhängig) --------------------------------
-\lstdefinestyle{hsxbase}{
+\lstdefinestyle{basestyle}{
   backgroundcolor   = \color{lst_bg},
   basicstyle        = \ttfamily\small,
   keywordstyle      = \color{lst_keyword}\bfseries,
@@ -147,14 +147,14 @@
     {ß}{{\ss}}1,
 }
 
-% --- Sprachspezifische Stile (erben von hsxbase) -----------------
-\lstdefinestyle{java}{style=hsxbase, language=Java}     % Bei Bedarf anpassen
-\lstdefinestyle{python}{style=hsxbase, language=Python} 
-\lstdefinestyle{sql}{style=hsxbase, language=SQL}       
-\lstdefinestyle{bash}{style=hsxbase, language=bash}
+% --- Sprachspezifische Stile (erben von basestyle) -----------------
+\lstdefinestyle{java}{style=basestyle, language=Java}     % Bei Bedarf anpassen
+\lstdefinestyle{python}{style=basestyle, language=Python} 
+\lstdefinestyle{sql}{style=basestyle, language=SQL}       
+\lstdefinestyle{bash}{style=basestyle, language=bash}
 
 % Standardstil für alle Listings ohne expliziten style=-Parameter:
-\lstset{style=hsxbase}
+\lstset{style=basestyle}
 
 % ------------------------------------------------------------
 %  LITERATURVERZEICHNIS  (biblatex + biber)
