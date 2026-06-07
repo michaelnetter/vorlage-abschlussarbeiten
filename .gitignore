@@ -1,0 +1,29 @@
+# LaTeX Build-Artefakte
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# PDF nur in build/-Verzeichnissen ignorieren, nicht die fertige Abgabe
+build/
+other/
+
+# todonotes
+*.tdo
+
+# Editor-Dateien
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
