@@ -1,7 +1,9 @@
 name: Release
 
 on:
-  workflow_dispatch:   # manuell über GitHub UI auslösen
+  push:
+    branches:
+      - main
 
 jobs:
   release:
