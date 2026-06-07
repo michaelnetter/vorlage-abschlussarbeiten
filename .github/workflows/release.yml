@@ -17,7 +17,7 @@ jobs:
         run: echo "version=$(date +%Y%m%d)" >> $GITHUB_OUTPUT
 
       - name: ZIP erstellen
-        run: zip -r Vorlage_HSX.zip Vorlage_HSX/
+        run: zip -r Vorlage_HSX.zip main.tex literature.bib figures/
 
       - name: GitHub Release erstellen und ZIP anhängen
         uses: softprops/action-gh-release@v2
