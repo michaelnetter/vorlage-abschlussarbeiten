@@ -1,4 +1,4 @@
-# Vorlage Abschlussarbeit – Hochschule XYZ
+# Vorlage Abschlussarbeit
 
 LaTeX-Vorlage für Bachelor- und Masterarbeiten. Engine: LuaLaTeX.
 
