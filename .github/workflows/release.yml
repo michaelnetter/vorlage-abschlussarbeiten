@@ -14,15 +14,15 @@ jobs:
 
       - name: Versionsnummer (Datum)
         id: date
-        run: echo "version=$(date +%Y%m%d)" >> $GITHUB_OUTPUT
+        run: echo "version=$(date +%Y-%m-%d)" >> $GITHUB_OUTPUT
 
       - name: ZIP erstellen
-        run: zip -r Vorlage_HSX.zip main.tex literature.bib figures/
+        run: zip -r Vorlage.zip main.tex literature.bib figures/
 
       - name: GitHub Release erstellen und ZIP anhängen
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.date.outputs.version }}
-          name: ${{ steps.date.outputs.version }}
+          tag_name: Version_${{ steps.date.outputs.version }}
+          name: Vorlage_Version_${{ steps.date.outputs.version }}
           body: "Automatisch generiertes Release vom ${{ steps.date.outputs.version }}"
-          files: Vorlage_HSX.zip
+          files: Vorlage.zip
