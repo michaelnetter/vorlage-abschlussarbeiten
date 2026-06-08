@@ -56,8 +56,8 @@
 \definecolor{lst_string} {RGB}{ 40, 120,  60}   % dunkles Grün
 \definecolor{lst_comment}{RGB}{120, 120, 120}   % mittelgrau
 \definecolor{lst_number} {RGB}{150, 150, 150}   % hellgrau (Zeilennummern)
-\definecolor{lst_rule}   {RGB}{180, 180, 180}   % Randlinie
-\definecolor{lst_bg}     {RGB}{230, 230, 230}   % Hintergrundfarbe
+\definecolor{lst_rule}   {RGB}{150, 150, 150}   % Randlinie
+\definecolor{lst_bg}     {RGB}{245, 245, 245}   % Hintergrundfarbe
 
 % ------------------------------------------------------------
 %  TODO-NOTIZEN  (vor Abgabe alle TODOs entfernen)
@@ -116,16 +116,6 @@
 %  CODE-LISTINGS
 % ------------------------------------------------------------
 \usepackage{listings}
-
-% --- Gedeckte, drucktaugliche Farben ----------------------------
-% Alle Töne funktionieren sowohl auf Screen als auch im
-% Graustufen-Ausdruck: sie unterscheiden sich im Hellwert.
-\definecolor{lst_bg}     {RGB}{248, 248, 248}   % sehr helles Grau
-\definecolor{lst_keyword}{RGB}{ 30,  80, 160}   % dunkles Blau
-\definecolor{lst_string} {RGB}{ 40, 120,  60}   % dunkles Grün
-\definecolor{lst_comment}{RGB}{120, 120, 120}   % Mittelgrau
-\definecolor{lst_number} {RGB}{160, 160, 160}   % Hellgrau (Zeilennummern)
-\definecolor{lst_rule}   {RGB}{200, 200, 200}   % Rahmenfarbe
 
 % --- Basisstil (sprachunabhängig) --------------------------------
 \lstdefinestyle{basestyle}{
@@ -355,7 +345,7 @@
   
   \todo{Dies ist ein Beispieltext. Bitte die aktuell
   gültige Fassung der ehrenwörtlichen Erklärung bei der
-  Hochschule~XYZ erfragen und diesen Text ersetzen.}
+  Hochschule erfragen und diesen Text ersetzen.}
   
   \vspace{3cm}
 
@@ -375,6 +365,11 @@
 
 % --- Inhaltsverzeichnis ---
 \tableofcontents
+
+% --- Abbildungsverzeichnis ---
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
 
 % --- Abkürzungsverzeichnis ---
 \cleardoublepage
@@ -479,7 +474,7 @@ Hilbert-Kurve, Abbildung~\ref{fig:gosper} die Gosper-Kurve.
     \caption{Gosper-Kurve}
     \label{fig:gosper}
   \end{subfigure}
-  \caption{Zwei fraktale Kurven.}
+  \caption{Zwei fraktale Kurven als Beispiel für zweiteilige Abbildungen.}
   \label{fig:fraktale}
 \end{figure}
 \footnotetext{Grafik: Alfred Nussbaumer,
@@ -521,13 +516,14 @@ Listing~\ref{lst:fibonacci} zeigt eine Beispiel-Implementierung der Fibonacci-Fu
                    label={lst:fibonacci}]
 public class FibonacciRecursion {
     static int fibonacci(int n) {
-        if (n <= 1)
+        if (n <= 1) {
             return n;
+        }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
     public static void main(String[] args) {
-        int n = 10; // Change this value as needed
+        int n = 10; // Anzahl der Fibonacci-Zahlen
         for (int i = 0; i < n; i++) {
             System.out.print(fibonacci(i) + " ");
         }
