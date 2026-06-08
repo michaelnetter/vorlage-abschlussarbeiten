@@ -102,6 +102,13 @@
 % Professionelle Tabellenlinien: \toprule, \midrule, \bottomrule
 % Kein \hline in wissenschaftlichen Tabellen verwenden!
 
+\usepackage[toc, page, title]{appendix}
+% Optionen:
+%   toc   – Anhang im Inhaltsverzeichnis als eigener Eintrag
+%   page  – eigene Trennseite "Anhang" vor den Anhangkapiteln
+%   title – Kapiteltitel erhalten automatisch den Präfix "Anhang"
+% Verwendung: \begin{appendices} ... \end{appendices}
+
 \usepackage{tabularx}
 % Tabellen mit automatisch angepasster Spaltenbreite (X-Spalte)
 
@@ -207,17 +214,6 @@
 \displaywidowpenalty = 10000  % gleiches für Zeilen vor Gleichungen
 
 % ------------------------------------------------------------
-%  HYPERLINKS & QUERVERWEISE  (zuletzt laden!)
-% ------------------------------------------------------------
-\usepackage[
-  hidelinks,          % keine farbigen Kästen um Links im PDF
-  pdfusetitle,        % PDF-Metadaten aus \title und \author
-  pdflang = {de-DE},
-]{hyperref}
-
-
-
-% ------------------------------------------------------------
 %  ABKÜRZUNGEN  (acro – aktiv gepflegt, Overleaf-kompatibel)
 % ------------------------------------------------------------
 \usepackage{acro}
@@ -270,6 +266,15 @@
 % PDF-Metadaten (werden automatisch von hyperref befüllt):
 \title{\ThesisTitel}
 \author{\ThesisAutor}
+
+% ------------------------------------------------------------
+%  HYPERLINKS & QUERVERWEISE  (zuletzt laden!)
+% ------------------------------------------------------------
+\usepackage[
+  hidelinks,          % keine farbigen Kästen um Links im PDF
+  pdfusetitle,        % PDF-Metadaten aus \title und \author
+  pdflang = {de-DE},
+]{hyperref}
 
 % ------------------------------------------------------------
 %  DECKBLATT-Befehl
@@ -568,17 +573,9 @@ Der Ausblick benennt weiterführende Fragestellungen und zeigt
 mögliche Anschlussarbeiten auf.
 
 % ============================================================
-%  LITERATURVERZEICHNIS
+%  ANHANG  (vor \backmatter, damit Kapitel A, B, C … nummeriert)
 % ============================================================
-\backmatter
-
-\printbibliography[heading=bibintoc]
-% heading=bibintoc: trägt das Literaturverzeichnis ins Inhaltsverzeichnis ein
-
-% ============================================================
-%  ANHANG
-% ============================================================
-\appendix
+\begin{appendices}
 
 \chapter{Vollständiger Quellcode}
 \label{app:code}
@@ -604,6 +601,16 @@ if __name__ == "__main__":
 
 Weitere Materialien wie Fragebögen, Messreihen oder Evaluations-
 daten können hier eingefügt werden.
+
+\end{appendices}
+
+% ============================================================
+%  LITERATURVERZEICHNIS
+% ============================================================
+\backmatter
+
+\printbibliography[heading=bibintoc]
+% heading=bibintoc: trägt das Literaturverzeichnis ins Inhaltsverzeichnis ein
 
 
 \end{document}
