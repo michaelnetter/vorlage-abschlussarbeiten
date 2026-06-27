@@ -24,7 +24,7 @@ jobs:
       - name: GitHub Release erstellen und ZIP anhängen
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v${{ steps.date.outputs.version }}
-          name: Vorlage_Ver_${{ steps.date.outputs.version }}
+          tag_name: v${{ github.run_number }}
+          name: Version v${{ github.run_number }}
           body: "Automatisch generiertes Release vom ${{ steps.date.outputs.version }}"
           files: Vorlage.zip
