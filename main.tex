@@ -22,6 +22,7 @@
 % (»Abbildung«, »Tabelle«, »Inhaltsverzeichnis« …)
 
 \usepackage{csquotes}
+\MakeOuterQuote{"}   % "Text" → „Text" (ngerman)
 % Korrekte deutsche Anführungszeichen: \enquote{Text} → „Text"
 % Pflichtpaket bei biblatex + ngerman
 
@@ -551,6 +552,11 @@ nicht-trennbares Leerzeichen (\verb|~|) verwendet:
 \end{itemize}
 
 Kapitel~\ref{ch:grundlagen} legt die Grundlagen dar.
+
+\section{Anführungszeichen}
+\label{sec:anführungszeichen}
+
+Für Text in \enquote{Anführungszeichen} sollte der enquote-Befehl genutzt werden.
 
 % ------------------------------------------------------------
 \chapter{Fazit und Ausblick}
